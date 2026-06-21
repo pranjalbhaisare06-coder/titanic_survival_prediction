@@ -9,7 +9,7 @@ def train_and_save_model(data_path='train.csv', model_output_path='model.pkl'):
     titanic_data = pd.read_csv(data_path)
 
     # Drop 'Cabin' column
-    titanic_data = titanic_data.drop(columns='Cabin', axis=1)
+   titanic_data = titanic_data.drop(columns=['Cabin'], errors='ignore')
 
     # Fill missing 'Age' with mean
     titanic_data['Age'].fillna(titanic_data['Age'].mean(), inplace=True)
