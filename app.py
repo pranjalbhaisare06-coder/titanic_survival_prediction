@@ -14,7 +14,7 @@ def load_and_preprocess_data():
     titanic_data = pd.read_csv('train.csv')
 
     # Drop 'Cabin' column
-    titanic_data = titanic_data.drop(columns='Cabin', axis=1)
+    titanic_data = titanic_data.drop(columns=['Cabin'], errors='ignore')
 
     # Fill missing 'Age' with mean
     titanic_data['Age'].fillna(titanic_data['Age'].mean(), inplace=True)
